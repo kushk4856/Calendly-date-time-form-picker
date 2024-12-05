@@ -21,7 +21,7 @@ body {
 .popup_cal_scheduler-container {
     width: 1100px;
     overflow: hidden;
-    height: 80vh;
+    height: 85vh;
     margin: 0 auto;
     background: white;
     border-radius: 8px;
@@ -81,7 +81,7 @@ body {
 .popup_cal_meeting-title {
     font-size: 24px;
     font-weight: bold;
-    color: black;
+    color: #0a2540;
     margin-bottom: 24px;
 }
 
@@ -260,6 +260,7 @@ body {
     overflow-y: scroll;
     padding-right: 24px;
     padding-inline: 1px;
+    padding-bottom: 20px;
 }
 
 .popup_cal_time-slot {
@@ -645,7 +646,8 @@ body {
     border-radius: 3px;
     padding: 0px 5px;
     margin: 5px;
-    font-size: 14px;
+    height: 26px;
+    font-size: 16px;
     color: #0d47a1;
 }
 
@@ -732,8 +734,10 @@ body {
     font-weight: 700;
 }
 
+
+
 .popup_cal_day:not(.popup_cal_disabled):hover {
-    background: #ebf8ff;
+    background: #d1e3fd;
     color: #3182ce;
 }
 

@@ -195,33 +195,52 @@ document.addEventListener("DOMContentLoaded", function () {
 // ====== Guest Email Management ======
 const emailInput = document.getElementById("email-input");
 const emailContainer = document.getElementById("email-container");
+const form = document.querySelector(".right_sticky_form");
 
 emailInput.addEventListener("keyup", function (event) {
-  if (event.key === "Enter" || event.key === ",") {
-    const email = emailInput.value.trim();
-    if (email && validateEmail(email)) {
-      addEmailChip(email);
-      emailInput.value = "";
+    if (event.key === "Enter" || event.key === ",") {
+        let email = emailInput.value.trim();
+        email = email.replace(/,$/, ""); // Remove trailing commas
+
+        if (email && validateEmail(email)) {
+            addEmailChip(email);
+            updateEmailInputValue(); // Update the input field value
+            emailInput.value = "";
+        }
+        event.preventDefault();
     }
-    event.preventDefault();
-  }
 });
 
 emailContainer.addEventListener("click", function (event) {
-  if (event.target.classList.contains("close-btn")) {
-    const chip = event.target.parentElement;
-    emailContainer.removeChild(chip);
-  }
+    if (event.target.classList.contains("close-btn")) {
+        const chip = event.target.parentElement;
+        emailContainer.removeChild(chip);
+        updateEmailInputValue(); // Update the input field value
+    }
+});
+
+// Ensure email-input is updated before form submission
+form.addEventListener("submit", function () {
+    updateEmailInputValue(); // Update input value just before submission
 });
 
 function validateEmail(email) {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(email);
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
 }
 
 function addEmailChip(email) {
-  const chip = document.createElement("div");
-  chip.classList.add("email-chip");
-  chip.innerHTML = `${email} <span class="close-btn">×</span>`;
-  emailContainer.insertBefore(chip, emailInput);
+    const chip = document.createElement("div");
+    chip.classList.add("email-chip");
+    chip.innerHTML = `
+        ${email}
+        <span class="close-btn">×</span>
+    `;
+    emailContainer.insertBefore(chip, emailInput);
+}
+
+function updateEmailInputValue() {
+    const chips = emailContainer.querySelectorAll(".email-chip");
+    const emailList = Array.from(chips).map(chip => chip.textContent.replace("×", "").trim());
+    emailInput.value = emailList.join(", "); // Set comma-separated emails in the input field
 }
