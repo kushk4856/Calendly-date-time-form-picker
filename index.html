@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="datePicker.css" />
+  </head>
+
+  <body>
+    <div class="popup_cal_scheduler-container">
+      <div class="popup_cal_left-panel">
+        <div class="previous_btn_popup">
+          <img src="./datePickerImg/up-arrow.png" alt="" />
+        </div>
+        <div class="popup_cal_logo">
+          <img src="./datePickerImg/ll-new.png" alt="" width="200" />
+        </div>
+        <div class="meeting_detail">
+          <div class="popup_cal_company-name">The Group Three</div>
+          <div class="popup_cal_meeting-title">Schedule Your Meeeting</div>
+          <div class="popup_cal_duration time_date_info">
+            <img src="./datePickerImg/clock.png" alt="" />
+            <div class="time_display">10:00pm</div>
+          </div>
+          <div class="time_date_info">
+            <img src="./datePickerImg/calendar (1).png" alt="" />
+            <div class="popup_cal_selected-date">Friday, December 20</div>
+          </div>
+
+          <div class="time_date_info">
+            <img src="./datePickerImg/planet-earth.png" alt="" />
+            India Standard Time
+          </div>
+        </div>
+      </div>
+
+      <div class="right_container_modal">
+        <div class="popup_cal_right-panel">
+          <div class="popup_cal_calendar-section">
+            <div class="">
+              <div class="">
+                <div class="popup_cal_main-header">
+                  <h2>Select a Date & Time</h2>
+                </div>
+
+                <div class="cal_time d-flex">
+                  <div class="popup_cal_calendar">
+                    <div class="popup_cal_month-selector">
+                      <button id="popup_cal_prev-month">
+                        <img src="./datePickerImg/left-arrow.png" alt="" />
+                      </button>
+                      <div id="popup_cal_current-month">December 2024</div>
+                      <button id="popup_cal_next-month">
+                        <img src="./datePickerImg/right-arrow.png" alt="" />
+                      </button>
+                    </div>
+                    <div class="popup_cal_weekdays">
+                      <div>MON</div>
+                      <div>TUE</div>
+                      <div>WED</div>
+                      <div>THU</div>
+                      <div>FRI</div>
+                      <div>SAT</div>
+                      <div>SUN</div>
+                    </div>
+                    <div
+                      class="popup_cal_days"
+                      id="popup_cal_calendar-days"
+                    ></div>
+                    <div class="popup_cal_timezone-selector">
+                      <p>Time Zone</p>
+                      <div class="time_option">
+                        <img src="./datePickerImg/globe-earth.png" alt="" />
+                        <select>
+                          <option>Indie Standard Time (4:15pm)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="right_time_container">
+                    <div class="popup_cal_selected-date">
+                      Friday, December 20
+                    </div>
+                    <div class="popup_cal_time-slots-section">
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">08:30PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">09:00PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">10:00PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">10:30PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">11:00PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">11:30PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">12:00PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">12:30PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">01:00PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                      <div class="popup_cal_button-group">
+                        <div class="popup_cal_time-slot-selected">01:30PM</div>
+                        <button class="popup_cal_next-button">Next</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ===form== -->
+        <form class="popupForm" action="#">
+          <div class="heading">
+            <h2>Enter Details</h2>
+          </div>
+          <div class="form_content">
+            <div class="name_field">
+              <div class="input_field_row">
+                <label for="name">Name*</label>
+                <input type="text" placeholder="" name="name" required />
+              </div>
+              <div class="input_field_row">
+                <label for="name">Email*</label>
+                <input type="text" placeholder="" name="email" required />
+              </div>
+            </div>
+            <div class="email_field">
+              <div class="input_field_row">
+                <label for="name">Phone*</label>
+                <input type="text" placeholder="" name="phone" required />
+              </div>
+              <div class="input_field_row">
+                <label for="name">Clinic Name*</label>
+                <input type="text" placeholder="" name="clinic_name" required />
+              </div>
+              <!-- <div class="add_guest">Add Guest</div> -->
+            </div>
+
+            <div class="email_field">
+              <div class="input_field_row">
+                <label for="name">City</label>
+                <input type="text" placeholder="" name="city" />
+              </div>
+              <div class="input_field_row">
+                <label for="name">Currently Using Software?</label>
+                <input type="text" placeholder="" name="is_using_software" />
+              </div>
+              <!-- <div class="add_guest">Add Guest</div> -->
+            </div>
+            <div class="email_field">
+              <div class="input_field_row">
+                <label for="name">Message</label>
+                <input type="text" placeholder="" name="message" />
+              </div>
+
+              <!-- <div class="add_guest">Add Guest</div> -->
+            </div>
+            <div class="email_field">
+              <div class="input_field_row" id="add_guestInput">
+                <label for="name">Guest Email</label>
+                <div id="email-container" class="email-input-container">
+                  <input
+                    type="text"
+                    id="email-input"
+                    placeholder="Add Guest Emails"
+                    class="email-input"
+                  />
+                </div>
+              </div>
+              <div class="add_guest">Add Envities</div>
+            </div>
+            <!-- <div class="message_field">
+            <label>Please share anything that will help prepare for our
+              meeting.</label>
+            <textarea name="message" rows="2" id=""></textarea>
+          </div> -->
+            <!-- <div class="footer_text">
+            By proceeding, you confirm that you have read and agree to
+            Calendly's Terms of Use and Privacy Notice.
+          </div> -->
+            <button type="submit">Schedule Demo</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="datePicker.js"></script>
+</html>
